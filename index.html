@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>TheVastLand|千里江山图</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script src="libraries/p5.serialport.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript" src="socket.io-1.4.5.js"></script>
+
+    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
+  
+  </head>
+  <body class = "loading">
+    <div id="wrapper">
+      <div id="bg"> </div>
+        <div id = "main" >
+            <header id = "header">
+                <h1>
+                	This is theVastLand 
+
+                </h1>
+                <p>
+                	tes test test test
+                </p>
+            </header>
+           </div>
+       </div>      
+    </div>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script>
+      window.onload = function() { document.body.className = ''; }
+      window.ontouchmove = function() { return false; }
+      window.onorientationchange = function() { document.body.scrollTop = 0; }
+    </script>
+  </body>
+</html>
