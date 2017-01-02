@@ -6,7 +6,9 @@ var normalizedValues = [];
 
 var AirData;
 
-
+var realtimeData;
+var realtimeSplitedData;
+var realtimePulltuionData;
 
 function preload() {
   img = loadImage("assets/OriginalPic_small.jpg"); // Load the image   
@@ -33,17 +35,33 @@ function setup() {
   canvas = createCanvas(1920, 371 * 2);
   thepainting = createImage(1920, 371 * 2);
   centerCanvas();
+  
+  
+
+  var bodyText = document.getElementById("DataText").innerHTML;
 
   //io socket to heroku-twitter-server
-  socket = io.connect('http://localhost:8080');
+  socket = io.connect('http://heroku-twit-server.herokuapp.com');
   
   //Recive twitter data
   socket.on('twitData',
     // When we receive data
     function(data) {
-      console.log("Got: " + data);
+      //console.log("Got: " + data);
+      if(data == null){
+        realtimePulltuionData = 100;
+      }
+      else{
+      realtimeData = data;
+      console.log(realtimeData);
+      document.getElementById("DataText").innerHTML = realtimeData;
+      realtimeSplitedData = split(realtimeData,";");
+      realtimePulltuionData = int(realtimeSplitedData[3]);
+      console.log(realtimePulltuionData);
+      }
     }
   );
+  
   
   
   //canvas.position(0,0);
@@ -79,14 +97,13 @@ var nT = 0;
 function draw() {
   nT = nT + .01;
   scrollCounter += scrollSpeed;
-  //clear();
+  clear();
 
 
-
-  background(0);
+  //background(0);
   var offsetY = int((height - img.height) * 0.4);
   for (var i = 0; i < img.width; i++) {
-    var maxDisplacement = 800 * noise(nT + i / 4) * noise(nT);
+    var maxDisplacement = realtimePulltuionData * noise(nT + i / 4) * noise(nT);
     var actualIndex = scrollCounter + i;
     actualIndex = actualIndex % img.width;
     var normalizedValue = normalizedValues[actualIndex];

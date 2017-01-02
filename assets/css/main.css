@@ -1,5 +1,6 @@
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url("http://fonts.googleapis.com/css?family=Rajdhani");
 @import url("font-awesome.min.css");
+
 
 /*
 	Aerial by HTML5 UP
@@ -60,11 +61,12 @@
 
 	body, input, select, textarea {
 		color: #fff;
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Rajdhani','STKaiti';
 		font-size: 15pt;
 		font-weight: 300 !important;
-		letter-spacing: -0.025em;
+		letter-spacing: 0.02em;
 		line-height: 1.75em;
+		text-shadow: 2px 2px 2px #161616;
 	}
 
 	body {
@@ -514,9 +516,9 @@
 	}
 
 		#header h1 {
-			font-size: 4.35em;
-			font-weight: 900;
-			letter-spacing: -0.035em;
+			font-size: 3.35em;
+			font-weight: 700;
+			letter-spacing: 0.05em;
 			line-height: 1em;
 		}
 
