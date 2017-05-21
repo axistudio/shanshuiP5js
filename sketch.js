@@ -70,8 +70,9 @@ function setup() {
         document.getElementById("DataText").innerHTML = realtimeData;
         realtimeSplitedData = split(realtimeData, ";");
         realtimePulltuionData = int(realtimeSplitedData[3]);
-        //console.log(realtimePulltuionData);
+        
       }
+      console.log(realtimePulltuionData);
     }
   );
 
